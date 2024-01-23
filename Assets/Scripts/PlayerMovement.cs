@@ -5,10 +5,13 @@ using UnityEngine;
 public class PlayerMovement : MonoBehaviour
 {
     public float speed = 10.5f;
+    public GameObject effectPrefab; // Assign the prefab for the effect in the editor
+    public float effectDuration = 5f;
+    public GameObject effectSpawnPoint;
 
-    // Update is called once per frame
     void Update()
     {
+        // Movement logic
         Vector3 pos = transform.position;
 
         if (Input.GetKey("w"))
@@ -29,5 +32,17 @@ public class PlayerMovement : MonoBehaviour
         }
 
         transform.position = pos;
+
+        // Ability trigger
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            TriggerAbility();
+        }
+    }
+
+    void TriggerAbility()
+    {
+        GameObject effect = Instantiate(effectPrefab, transform.position - new Vector3(1, 0, 0), Quaternion.identity);
+        Destroy(effect, effectDuration);  // Destroy the effect object after 'effectDuration' seconds
     }
 }
