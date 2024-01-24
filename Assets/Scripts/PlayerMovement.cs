@@ -9,6 +9,8 @@ public class PlayerMovement : MonoBehaviour
     public float effectDuration = 5f;
     public GameObject effectSpawnPoint;
 
+    [SerializeField] private GameObject _crow;
+
     void Update()
     {
         // Movement logic
@@ -44,5 +46,13 @@ public class PlayerMovement : MonoBehaviour
     {
         GameObject effect = Instantiate(effectPrefab, transform.position - new Vector3(1, 0, 0), Quaternion.identity);
         Destroy(effect, effectDuration);  // Destroy the effect object after 'effectDuration' seconds
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if(collision.name == "Crow")
+        {
+            _crow.SetActive(true);
+        }
     }
 }
