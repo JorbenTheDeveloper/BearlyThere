@@ -24,7 +24,7 @@ public class PlayerMovement : MonoBehaviour
     public Image abilityCooldownImage; // Shown when ability is on cooldown
     public TextMeshProUGUI cooldownText;
 
-    [SerializeField] private GameObject _crow;
+    //[SerializeField] private GameObject _crow;
 
     private void Start()
     {
@@ -118,10 +118,10 @@ public class PlayerMovement : MonoBehaviour
             door.Teleport(gameObject);
         }
 
-        if (other.name == "Crow")
-        {
-            _crow.SetActive(true);
-        }
+        //if (other.name == "Crow")
+        
+            //_crow.SetActive(true);
+        
     }
 
     public void LoseStamina(int amount)
