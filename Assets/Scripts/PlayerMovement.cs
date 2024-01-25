@@ -122,6 +122,7 @@ public class PlayerMovement : MonoBehaviour
         
             //_crow.SetActive(true);
         
+        
     }
 
     public void LoseStamina(int amount)
