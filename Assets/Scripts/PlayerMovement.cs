@@ -128,6 +128,7 @@ public class PlayerMovement : MonoBehaviour
     {
         stamina -= amount;
         stamina = Mathf.Clamp(stamina, 0, maxStamina);
+        UpdateUI();
     }
 }
 
