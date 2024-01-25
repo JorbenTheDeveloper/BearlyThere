@@ -11,7 +11,6 @@ GameObject:
   - component: {fileID: 3796119186260601119}
   - component: {fileID: 3796119186260601118}
   - component: {fileID: 3796119186260601113}
-  - component: {fileID: 3796119186260601112}
   - component: {fileID: 3796119186260601115}
   m_Layer: 0
   m_Name: Crow
@@ -531,22 +530,6 @@ PolygonCollider2D:
       - {x: 0.804, y: -0.85200006}
       - {x: 0.818, y: -0.85}
       - {x: 0.836, y: -0.846}
---- !u!70 &3796119186260601112
-CapsuleCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3796119186260601114}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_Size: {x: 2.4, y: 2.1}
-  m_Direction: 1
 --- !u!50 &3796119186260601115
 Rigidbody2D:
   serializedVersion: 4
