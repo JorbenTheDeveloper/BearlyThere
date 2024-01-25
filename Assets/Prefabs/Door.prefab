@@ -100,6 +100,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   connectedDoor: {fileID: 0}
   teleportDestination: {fileID: 0}
+  usedColor: {r: 0.508455, g: 0.5471698, b: 0.5471698, a: 1}
 --- !u!61 &2291303733255936513
 BoxCollider2D:
   m_ObjectHideFlags: 0

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using UnityEngine.SceneManagement;
 
 public class PlayerMovement : MonoBehaviour
 {
@@ -96,6 +97,11 @@ public class PlayerMovement : MonoBehaviour
     {
         staminaBar.value = stamina;
         staminaText.text = "" + Mathf.RoundToInt(stamina).ToString();
+
+        if (stamina <= 0)
+        {
+            SceneManager.LoadScene("Lose"); 
+        }
     }
 
     void TriggerAbility()
