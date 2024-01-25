@@ -98,14 +98,14 @@ public class BeeMovement : MonoBehaviour
         currentState = previousState; // Return to the previous state
     }
 
-    private void OnTriggerEnter2D(Collider2D other)
+    private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (other.CompareTag("PlayerCharacter"))
+        if (collision.gameObject.CompareTag("PlayerCharacter"))
         {
-            PlayerMovement player = other.GetComponent<PlayerMovement>();
+            PlayerMovement player = collision.gameObject.GetComponent<PlayerMovement>();
             if (player != null)
             {
-                player.LoseStamina(5); // Assuming LoseStamina method exists in PlayerMovement
+                player.LoseStamina(5); // Reduce player stamina by 5
             }
         }
     }
