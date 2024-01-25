@@ -444,6 +444,7 @@ MonoBehaviour:
   beeSpawnPoints:
   - {fileID: 1729460169509358104}
   player: {fileID: 0}
+  spawnRange: 5
 --- !u!1 &8509616453736306255
 GameObject:
   m_ObjectHideFlags: 0
