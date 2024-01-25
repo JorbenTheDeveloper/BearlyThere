@@ -138,4 +138,16 @@ public class EnemyPatrol : MonoBehaviour
         else
             currentState = previousState; // Return to the previous state
     }
+
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.CompareTag("PlayerCharacter"))
+        {
+            PlayerMovement player = other.GetComponent<PlayerMovement>();
+            if (player != null)
+            {
+                player.LoseStamina(5); // Assuming LoseStamina method exists in PlayerMovement
+            }
+        }
+    }
 }
