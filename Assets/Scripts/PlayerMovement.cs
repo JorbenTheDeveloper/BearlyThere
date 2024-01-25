@@ -123,5 +123,11 @@ public class PlayerMovement : MonoBehaviour
             _crow.SetActive(true);
         }
     }
+
+    public void LoseStamina(int amount)
+    {
+        stamina -= amount;
+        stamina = Mathf.Clamp(stamina, 0, maxStamina);
+    }
 }
 
