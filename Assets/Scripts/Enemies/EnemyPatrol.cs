@@ -138,4 +138,16 @@ public class EnemyPatrol : MonoBehaviour
         else
             currentState = previousState; // Return to the previous state
     }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.CompareTag("PlayerCharacter"))
+        {
+            PlayerMovement player = collision.gameObject.GetComponent<PlayerMovement>();
+            if (player != null)
+            {
+                player.LoseStamina(5); // Reduce player stamina by 5
+            }
+        }
+    }
 }

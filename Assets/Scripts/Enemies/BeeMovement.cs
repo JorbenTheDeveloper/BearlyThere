@@ -14,6 +14,8 @@ public class BeeMovement : MonoBehaviour
     public float detectionRange = 5f;
     public Transform beehive;
 
+    
+
     private void Start()
     {
         startPosition = transform.position; // Store the starting position (or set this to beehive.position if you want them to return to the beehive)
@@ -94,5 +96,17 @@ public class BeeMovement : MonoBehaviour
         }
 
         currentState = previousState; // Return to the previous state
+    }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.CompareTag("PlayerCharacter"))
+        {
+            PlayerMovement player = collision.gameObject.GetComponent<PlayerMovement>();
+            if (player != null)
+            {
+                player.LoseStamina(5); // Reduce player stamina by 5
+            }
+        }
     }
 }
