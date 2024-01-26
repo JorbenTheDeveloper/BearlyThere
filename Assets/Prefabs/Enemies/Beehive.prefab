@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 5745143194544570190}
   - component: {fileID: 5745143194544570185}
   - component: {fileID: 5745143194544570188}
+  - component: {fileID: 8618246373796167287}
   m_Layer: 0
   m_Name: Beehive
   m_TagString: Untagged
@@ -445,6 +446,26 @@ MonoBehaviour:
   - {fileID: 1729460169509358104}
   player: {fileID: 0}
   spawnRange: 5
+--- !u!95 &8618246373796167287
+Animator:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5745143194544570184}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 2dc104a51d34a7a49bfa8e9b0142aad2, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &8509616453736306255
 GameObject:
   m_ObjectHideFlags: 0

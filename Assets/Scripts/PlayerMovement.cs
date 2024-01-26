@@ -25,10 +25,18 @@ public class PlayerMovement : MonoBehaviour
     public Image abilityCooldownImage; // Shown when ability is on cooldown
     public TextMeshProUGUI cooldownText;
 
+    //    ANIMATION STUFF
+
+    public Animator playerAC;
+   // public float normalAnimSpeed = 1;
+   // public float runAnimSpeed = 5f;
+
     [SerializeField] private GameObject _crow;
 
     private void Start()
     {
+
+        playerAC = GetComponent<Animator>();
         originalSpeed = speed;
         boostedSpeed = speed * 2f;
 
@@ -36,6 +44,8 @@ public class PlayerMovement : MonoBehaviour
         staminaBar.value = stamina;
 
         abilityTimer = abilityCooldown;
+
+       
     }
 
     void Update()
@@ -51,11 +61,16 @@ public class PlayerMovement : MonoBehaviour
         if (Input.GetMouseButton(0) && stamina > 0)
         {
             speed = boostedSpeed;
+            playerAC.SetBool("Run", true);
             DrainStamina(2 * Time.deltaTime);
+
         }
         else
         {
             speed = originalSpeed;
+            playerAC.SetBool("Run", false);
+
+
         }
 
         Vector3 pos = transform.position;
@@ -132,9 +147,15 @@ public class PlayerMovement : MonoBehaviour
 
     public void LoseStamina(int amount)
     {
+        playerAC.SetBool("Damaged", true);
         stamina -= amount;
         stamina = Mathf.Clamp(stamina, 0, maxStamina);
         UpdateUI();
+    }
+
+    public void AnimationDone()
+    {
+        playerAC.SetBool("Damaged", false);
     }
 }
 

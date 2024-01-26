@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 9051692858133815307}
   - component: {fileID: 9051692858133815310}
   - component: {fileID: 9051692858133815311}
+  - component: {fileID: 7672678133281017043}
   m_Layer: 0
   m_Name: Bear
   m_TagString: Untagged
@@ -397,3 +398,23 @@ PolygonCollider2D:
       - {x: 0.2, y: -0.94600004}
       - {x: 0.202, y: -0.9480001}
       - {x: 0.34600002, y: -0.9480001}
+--- !u!95 &7672678133281017043
+Animator:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9051692858133815306}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 6b4d3d97189ecbc48aaa2d7baa8ba39a, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
