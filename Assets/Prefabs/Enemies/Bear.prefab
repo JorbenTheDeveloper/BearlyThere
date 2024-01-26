@@ -189,7 +189,7 @@ MonoBehaviour:
   maxScale: {x: 1.5, y: 1.5, z: 1}
   fartEffectPrefab: {fileID: 8196062773715377749, guid: f2e12eb8df0e1e34d9d86080c91b3fed, type: 3}
   minGrowDuration: 2
-  maxGrowDuration: 7
+  maxGrowDuration: 5
   shrinkDuration: 3
   detectionRadius: 7
 --- !u!50 &9051692858133815310
