@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3430231554469510353}
   - component: {fileID: 3430231554469510358}
-  - component: {fileID: 3430231554469510359}
+  - component: {fileID: 3573868549239191769}
   m_Layer: 0
   m_Name: Pond
   m_TagString: Untagged
@@ -85,7 +85,7 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!60 &3430231554469510359
+--- !u!60 &3573868549239191769
 PolygonCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
