@@ -11304,6 +11304,7 @@ GameObject:
   - component: {fileID: 345171219}
   - component: {fileID: 345171218}
   - component: {fileID: 345171217}
+  - component: {fileID: 345171221}
   m_Layer: 0
   m_Name: Player
   m_TagString: PlayerCharacter
@@ -11387,6 +11388,7 @@ MonoBehaviour:
   abilityActiveImage: {fileID: 713307025}
   abilityCooldownImage: {fileID: 1762386195}
   cooldownText: {fileID: 945227020}
+  playerAc: {fileID: 345171221}
 --- !u!212 &345171220
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -11439,6 +11441,26 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!95 &345171221
+Animator:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 345171215}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: a6e616a3996fa1b43a18334df9ceeb6a, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &349590692
 GameObject:
   m_ObjectHideFlags: 0
@@ -19159,7 +19181,7 @@ Transform:
   - {fileID: 941958347}
   - {fileID: 122143316}
   m_Father: {fileID: 625156094}
-  m_RootOrder: 5
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &611348129
 GameObject:
@@ -19253,10 +19275,10 @@ Transform:
   m_Children:
   - {fileID: 1964533128}
   - {fileID: 1733662147}
+  - {fileID: 606636503}
   - {fileID: 1214980952}
   - {fileID: 762327265}
   - {fileID: 901446382}
-  - {fileID: 606636503}
   - {fileID: 1412447347}
   m_Father: {fileID: 2082490846}
   m_RootOrder: 10
