@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 7995379936195688474}
   - component: {fileID: 6032363652883553071}
   - component: {fileID: 7614721201383907364}
+  - component: {fileID: 8287650094844866309}
   m_Layer: 0
   m_Name: fart
   m_TagString: Untagged
@@ -115,3 +116,23 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   fleeDuration: 2
+--- !u!95 &8287650094844866309
+Animator:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5180164470369923702}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 9ca57af69750ae24e82e0b099346e60f, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0

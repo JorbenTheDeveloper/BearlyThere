@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 8196062773715377748}
   - component: {fileID: 8196062773715377753}
   - component: {fileID: -551699238552201096}
+  - component: {fileID: 6532944024782446989}
   m_Layer: 0
   m_Name: BearFart
   m_TagString: Untagged
@@ -196,3 +197,23 @@ PolygonCollider2D:
       - {x: -0.4, y: -2.325}
       - {x: -0.175, y: -2.1875}
       - {x: -0.0625, y: -2.05}
+--- !u!95 &6532944024782446989
+Animator:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8196062773715377749}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 7ae47a7bc83a5e641a020d6d84e3f1f7, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
