@@ -6,6 +6,8 @@ using UnityEngine.SceneManagement;
 
 public class SceneLoader : MonoBehaviour
 {
+    public string sceneToLoad;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -22,4 +24,13 @@ public class SceneLoader : MonoBehaviour
     {
         SceneManager.LoadScene(sceneName);
     }
+
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.CompareTag("PlayerCharacter"))
+        {
+            SceneManager.LoadScene(sceneToLoad);
+        }
+    }
+
 }
