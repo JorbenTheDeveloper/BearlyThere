@@ -11,6 +11,8 @@ public class Bear : MonoBehaviour
     public float shrinkDuration = 5f; // Time taken to shrink back to original size
 
     private Vector3 originalScale; // Store the original scale of the bear
+    public float detectionRadius = 5f; // Radius within which the bear detects the player
+    private bool playerInRange = false;
 
     private void Start()
     {
@@ -18,22 +20,44 @@ public class Bear : MonoBehaviour
         StartCoroutine(BearRoutine()); // Start the bear behavior routine
     }
 
+    private void Update()
+    {
+        Collider2D[] hitColliders = Physics2D.OverlapCircleAll(transform.position, detectionRadius);
+        playerInRange = false;
+
+        foreach (var hitCollider in hitColliders)
+        {
+            if (hitCollider.CompareTag("PlayerCharacter"))
+            {
+                playerInRange = true;
+                break;
+            }
+        }
+    }
+
     IEnumerator BearRoutine()
     {
-        while (true) // Infinite loop to repeat the behavior
+        while (true)
         {
-            // Generate a random duration for growing
-            float randomGrowDuration = Random.Range(minGrowDuration, maxGrowDuration);
+            if (playerInRange)
+            {
+                // Generate a random duration for growing
+                float randomGrowDuration = Random.Range(minGrowDuration, maxGrowDuration);
 
-            // Scale up
-            yield return ScaleOverTime(maxScale, randomGrowDuration);
+                // Scale up
+                yield return ScaleOverTime(maxScale, randomGrowDuration);
 
-            // Fart
-            GameObject fart = Instantiate(fartEffectPrefab, transform.position, Quaternion.identity);
-            Destroy(fart, 2f); // Destroy the fart effect after a short duration
+                // Fart
+                GameObject fart = Instantiate(fartEffectPrefab, transform.position, Quaternion.identity);
+                Destroy(fart, 2f); // Destroy the fart effect after a short duration
 
-            // Scale down
-            yield return ScaleOverTime(originalScale, shrinkDuration);
+                // Scale down
+                yield return ScaleOverTime(originalScale, shrinkDuration);
+            }
+            else
+            {
+                yield return null; // Wait for the next frame before checking again
+            }
         }
     }
 
@@ -50,5 +74,11 @@ public class Bear : MonoBehaviour
         }
 
         transform.localScale = targetScale; // Ensure the final scale is set accurately
+    }
+
+    private void OnDrawGizmos()
+    {
+        Gizmos.color = Color.blue;
+        Gizmos.DrawWireSphere(transform.position, detectionRadius);
     }
 }
