@@ -11594,6 +11594,7 @@ GameObject:
   - component: {fileID: 345171219}
   - component: {fileID: 345171218}
   - component: {fileID: 345171217}
+  - component: {fileID: 345171221}
   m_Layer: 0
   m_Name: Player
   m_TagString: PlayerCharacter
@@ -11609,7 +11610,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 345171215}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 29.8, y: 0.3, z: 0}
+  m_LocalPosition: {x: -11.48, y: 0.44, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -11677,7 +11678,7 @@ MonoBehaviour:
   abilityActiveImage: {fileID: 713307025}
   abilityCooldownImage: {fileID: 1762386195}
   cooldownText: {fileID: 945227020}
-  playerAc: {fileID: 0}
+  playerAc: {fileID: 345171221}
 --- !u!212 &345171220
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -11730,6 +11731,26 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!95 &345171221
+Animator:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 345171215}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: a6e616a3996fa1b43a18334df9ceeb6a, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &349590692
 GameObject:
   m_ObjectHideFlags: 0
@@ -24560,7 +24581,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 765179893}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 29.8, y: 0.3, z: -10}
+  m_LocalPosition: {x: -11.48, y: 0.44, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -48389,7 +48410,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1604844426}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 29.8, y: 0.3, z: -10}
+  m_LocalPosition: {x: -11.48, y: 0.44, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
