@@ -692,6 +692,8 @@ MonoBehaviour:
   - {fileID: 0}
   player: {fileID: 0}
   detectionRange: 3
+  attackDistance: 2
+  attackCooldown: 2
 --- !u!95 &8411155339845091459
 Animator:
   serializedVersion: 4
