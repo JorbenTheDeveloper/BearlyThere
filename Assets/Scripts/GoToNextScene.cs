@@ -5,6 +5,8 @@ using UnityEngine.SceneManagement;
 
 public class GoToNextScene : MonoBehaviour
 {
+    public int cutsceneLength;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -19,7 +21,7 @@ public class GoToNextScene : MonoBehaviour
 
     IEnumerator NextScene()
     {
-        yield return new WaitForSeconds(7);
+        yield return new WaitForSeconds(cutsceneLength);
         SceneManager.LoadScene("LevelOne");
     }
 }
