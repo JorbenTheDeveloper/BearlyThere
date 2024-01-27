@@ -10835,10 +10835,7 @@ MonoBehaviour:
   abilityActiveImage: {fileID: 53609960}
   abilityCooldownImage: {fileID: 714318448}
   cooldownText: {fileID: 1503956684}
-  playerAC: {fileID: 0}
-  normalAnimSpeed: 1
-  runAnimSpeed: 5
-  _crow: {fileID: 3796119186260601114, guid: e756301ffcd6b4047aa49b46e9aeef95, type: 3}
+  playerAc: {fileID: 0}
 --- !u!212 &703599847
 SpriteRenderer:
   m_ObjectHideFlags: 0
