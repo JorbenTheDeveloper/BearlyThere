@@ -1,36 +1,51 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Playables;
 using UnityEngine.SceneManagement;
 
 
 public class SceneLoader : MonoBehaviour
 {
     public string sceneToLoad;
-
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
-    public void SwitchScene(string sceneName)
-    {
-        SceneManager.LoadScene(sceneName);
-    }
+    public Animator animator; // Reference to the Animator
+    public float animationDuration = 2f; // Duration of the animation
 
     private void OnTriggerEnter2D(Collider2D other)
     {
         if (other.CompareTag("PlayerCharacter"))
         {
-            SceneManager.LoadScene(sceneToLoad);
+            StartCoroutine(PlayAnimationAndSwitchScene());
         }
+    }
+
+    IEnumerator PlayAnimationAndSwitchScene()
+    {
+        // Trigger the animation
+        animator.SetTrigger("StartAnimation"); // Replace with your trigger parameter
+
+        // Wait for the animation to finish
+        yield return new WaitForSeconds(animationDuration);
+
+        // Load the new scene
+        SceneManager.LoadScene(sceneToLoad);
+    }
+
+    public void SwitchScene(string sceneName)
+    {
+        StartCoroutine(PlayAnimationAndSwitchScene(sceneName));
+    }
+
+    IEnumerator PlayAnimationAndSwitchScene(string sceneName)
+    {
+        // Trigger the animation
+        animator.SetTrigger("StartAnimation"); // Replace with your trigger parameter
+
+        // Wait for the animation to finish
+        yield return new WaitForSeconds(animationDuration);
+
+        // Load the specified scene
+        SceneManager.LoadScene(sceneName);
     }
 
 }

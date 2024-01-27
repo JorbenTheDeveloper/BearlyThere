@@ -3122,6 +3122,8 @@ PlayableDirector:
   m_SceneBindings:
   - key: {fileID: -4467543460293924597, guid: 3e9caa91d0b03fc40a2f1fe29d24e1a3, type: 2}
     value: {fileID: 609119831}
+  - key: {fileID: 3777497552850599631, guid: 3e9caa91d0b03fc40a2f1fe29d24e1a3, type: 2}
+    value: {fileID: 609119831}
   m_ExposedReferences:
     m_References: []
 --- !u!4 &82419408
@@ -42852,6 +42854,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sceneToLoad: LevelTwo
+  animator: {fileID: 0}
+  animationDuration: 2
 --- !u!1001 &1652442721
 PrefabInstance:
   m_ObjectHideFlags: 0
