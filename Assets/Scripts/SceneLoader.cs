@@ -21,11 +21,14 @@ public class SceneLoader : MonoBehaviour
 
     IEnumerator PlayAnimationAndSwitchScene()
     {
-        // Trigger the animation
-        animator.SetTrigger("StartAnimation"); // Replace with your trigger parameter
+        if (animator != null)
+        {
+            // Trigger the animation
+            animator.SetTrigger("StartAnimation"); // Replace with your trigger parameter
 
-        // Wait for the animation to finish
-        yield return new WaitForSeconds(animationDuration);
+            // Wait for the animation to finish
+            yield return new WaitForSeconds(animationDuration);
+        }
 
         // Load the new scene
         SceneManager.LoadScene(sceneToLoad);
@@ -38,11 +41,14 @@ public class SceneLoader : MonoBehaviour
 
     IEnumerator PlayAnimationAndSwitchScene(string sceneName)
     {
-        // Trigger the animation
-        animator.SetTrigger("StartAnimation"); // Replace with your trigger parameter
+        if (animator != null)
+        {
+            // Trigger the animation
+            animator.SetTrigger("StartAnimation"); // Replace with your trigger parameter
 
-        // Wait for the animation to finish
-        yield return new WaitForSeconds(animationDuration);
+            // Wait for the animation to finish
+            yield return new WaitForSeconds(animationDuration);
+        }
 
         // Load the specified scene
         SceneManager.LoadScene(sceneName);
