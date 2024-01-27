@@ -106,7 +106,10 @@ public class PlayerMovement : MonoBehaviour
 
         if (stamina <= 0)
         {
-            SceneManager.LoadScene("Lose"); 
+
+            playerAc.SetBool("Poop", true);
+
+           // SceneManager.LoadScene("Lose"); 
         }
     }
 
@@ -151,6 +154,11 @@ public class PlayerMovement : MonoBehaviour
         stamina = Mathf.Clamp(stamina, 0, maxStamina);
         UpdateUI();
         playerAc.SetBool("Damaged", false);
+    }
+
+    public void TimeToPoop() 
+    {
+        SceneManager.LoadScene("Lose");
     }
 }
 
