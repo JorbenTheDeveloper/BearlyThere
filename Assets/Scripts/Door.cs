@@ -13,7 +13,11 @@ public class Door : MonoBehaviour
         if (teleportDestination != null)
         {
             player.transform.position = teleportDestination.transform.position; // Teleport the player
-            ChangeColor(this.gameObject, usedColor);
+            ChangeColor(this.gameObject, usedColor); // Change color of this door
+            if (connectedDoor != null)
+            {
+                ChangeColor(connectedDoor.gameObject, usedColor); // Change color of the connected door
+            }
         }
     }
 

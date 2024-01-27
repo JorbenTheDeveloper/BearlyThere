@@ -4,9 +4,8 @@ using UnityEngine;
 
 public class EnemyPatrol : MonoBehaviour
 {
-    public enum EnemyState { Patrolling, Chasing, Fleeing }
+    public enum EnemyState { Patrolling, Chasing, Fleeing, Attacking }
     private EnemyState currentState = EnemyState.Patrolling;
-    private EnemyState previousState;
 
     [Header("Patrol Settings")]
     public Transform[] movementPoints;
@@ -18,8 +17,11 @@ public class EnemyPatrol : MonoBehaviour
     private float fleeSpeed = 4f; // Fleeing speed, faster than patrol and chase
     public Transform player;
     public float detectionRange = 5f;
+    public float attackDistance = 1f; // Distance at which enemy will stop to attack
+    public float attackCooldown = 1f; // Time between attacks
 
-    private Vector3 tempScale;
+    private bool isAttacking = false;
+    private float lastAttackTime = 0f;
 
     private void Start()
     {
@@ -28,21 +30,33 @@ public class EnemyPatrol : MonoBehaviour
 
     private void Update()
     {
-        switch (currentState)
+        float distanceToPlayer = Vector2.Distance(transform.position, player.position);
+
+        if (currentState == EnemyState.Fleeing)
         {
-            case EnemyState.Patrolling:
-                Patrol();
-                break;
-            case EnemyState.Chasing:
-                ChasePlayer();
-                break;
-            case EnemyState.Fleeing:
-                // Fleeing behavior is handled in the coroutine
-                break;
+            // Fleeing logic is handled in the FleeRoutine coroutine
+            return;
         }
 
-        CheckForPlayer();
-        HandleFacingDirection();
+        if (!isAttacking && distanceToPlayer <= attackDistance && Time.time >= lastAttackTime + attackCooldown)
+        {
+            StartCoroutine(AttackPlayer());
+        }
+        else if (distanceToPlayer <= detectionRange)
+        {
+            currentState = EnemyState.Chasing;
+            ChasePlayer();
+        }
+        else
+        {
+            currentState = EnemyState.Patrolling;
+            Patrol();
+        }
+
+        if (currentState == EnemyState.Chasing || currentState == EnemyState.Attacking)
+        {
+            HandleFacingDirection();
+        }
     }
 
     void Patrol()
@@ -61,10 +75,6 @@ public class EnemyPatrol : MonoBehaviour
         {
             MoveTowards(player.position, chaseSpeed);
         }
-        else
-        {
-            currentState = EnemyState.Patrolling;
-        }
     }
 
     void MoveTowards(Vector2 target, float speed)
@@ -77,76 +87,68 @@ public class EnemyPatrol : MonoBehaviour
         currentPointIndex = (currentPointIndex + 1) % movementPoints.Length;
     }
 
-    void CheckForPlayer()
+    IEnumerator AttackPlayer()
     {
-        if (player != null && Vector2.Distance(transform.position, player.position) <= detectionRange)
+        isAttacking = true;
+        lastAttackTime = Time.time;
+
+        PlayerMovement playerMovement = player.GetComponent<PlayerMovement>();
+        if (playerMovement != null)
         {
-            currentState = EnemyState.Chasing;
+            playerMovement.LoseStamina(5);
         }
-        else
-        {
-            currentState = EnemyState.Patrolling;
-        }
+
+        yield return new WaitForSeconds(attackCooldown);
+
+        isAttacking = false;
     }
 
-    void HandleFacingDirection()
-    {
-        tempScale = transform.localScale;
-
-        if (transform.position.x > movementPoints[currentPointIndex].position.x)
-        {
-            tempScale.x = Mathf.Abs(tempScale.x);
-        }
-        else if (transform.position.x < movementPoints[currentPointIndex].position.x)
-        {
-            tempScale.x = -Mathf.Abs(tempScale.x);
-        }
-
-        transform.localScale = tempScale;
-    }
-
-    // Optional: Draw Gizmos for detection range
-    private void OnDrawGizmos()
-    {
-        Gizmos.color = Color.red;
-        Gizmos.DrawWireSphere(transform.position, detectionRange);
-    }
-
-    public void Flee(Vector3 fearSource, float duration)
+    public void Flee(float duration)
     {
         if (currentState != EnemyState.Fleeing)
         {
-            previousState = currentState;
-            StartCoroutine(FleeRoutine(fearSource, duration));
+            StartCoroutine(FleeRoutine(duration));
         }
     }
 
-    private IEnumerator FleeRoutine(Vector3 fearSource, float duration)
+    private IEnumerator FleeRoutine(float duration)
     {
         currentState = EnemyState.Fleeing;
-        Vector3 direction = (transform.position - fearSource).normalized;
+        Vector3 fleeDirection = ChooseFleeDirection();
         float endTime = Time.time + duration;
 
         while (Time.time < endTime)
         {
-            transform.position += direction * fleeSpeed * Time.deltaTime;
+            transform.position += fleeDirection * fleeSpeed * Time.deltaTime;
             yield return null;
         }
 
-        if (Vector2.Distance(transform.position, player.position) <= detectionRange)
-            currentState = EnemyState.Chasing;
-        else
-            currentState = previousState; // Return to the previous state
+        currentState = EnemyState.Patrolling; // Return to patrolling after fleeing
     }
 
-    private void OnCollisionEnter2D(Collision2D collision)
+    private Vector3 ChooseFleeDirection()
     {
-        if (collision.gameObject.CompareTag("PlayerCharacter"))
+        // Implement logic to choose a flee direction.
+        return Random.insideUnitCircle.normalized;
+    }
+
+    void HandleFacingDirection()
+    {
+        if (player != null)
         {
-            PlayerMovement player = collision.gameObject.GetComponent<PlayerMovement>();
-            if (player != null)
+            // Determine the direction of the player relative to the enemy
+            float direction = player.position.x - transform.position.x;
+
+            // Flip the sprite based on the direction
+            if (direction > 0)
             {
-                player.LoseStamina(5); // Reduce player stamina by 5
+                // Player is to the right, face right
+                transform.localScale = new Vector3(-Mathf.Abs(transform.localScale.x), transform.localScale.y, transform.localScale.z);
+            }
+            else if (direction < 0)
+            {
+                // Player is to the left, face left (original orientation)
+                transform.localScale = new Vector3(Mathf.Abs(transform.localScale.x), transform.localScale.y, transform.localScale.z);
             }
         }
     }
