@@ -6,6 +6,9 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
+    path: Assets/Scenes/VideoStart.unity
+    guid: 801dec69499b71b48a1f76f19a86d163
+  - enabled: 1
     path: Assets/Scenes/Start.unity
     guid: 69fdabcc1f0709f4fac97051543cd86a
   - enabled: 1
@@ -15,12 +18,15 @@ EditorBuildSettings:
     path: Assets/Scenes/LevelOne.unity
     guid: 2cda990e2423bbf4892e6590ba056729
   - enabled: 1
+    path: Assets/Scenes/LevelTwo.unity
+    guid: b724eb77982595f42a3fc27b17801fee
+  - enabled: 1
+    path: Assets/Scenes/LevelThree.unity
+    guid: f5619ddcaee818a46b4b7aa3c5e62ed3
+  - enabled: 1
     path: Assets/Scenes/Win.unity
     guid: b2294e6d2c2f21749aa2b70354b184ca
   - enabled: 1
     path: Assets/Scenes/Lose.unity
     guid: 37476d9543a78b74783729f5939cbac2
-  - enabled: 1
-    path: Assets/Scenes/LevelTwo.unity
-    guid: b724eb77982595f42a3fc27b17801fee
   m_configObjects: {}
