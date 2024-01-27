@@ -55,7 +55,7 @@ public class PlayerMovement : MonoBehaviour
         if (Input.GetMouseButton(0) && stamina > 0)
         {
             speed = boostedSpeed;
-            DrainStamina(2 * Time.deltaTime);
+            DrainStamina(3 * Time.deltaTime);
             playerAc.SetBool("Run", true);
         }
         else
