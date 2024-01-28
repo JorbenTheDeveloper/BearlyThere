@@ -129,6 +129,9 @@ MonoBehaviour:
   detectionRange: 5
   attackDistance: 1
   attackCooldown: 1
+  duckSounds: {fileID: 0}
+  audioRange: 10
+  maxVolume: 1
 --- !u!58 &7033742688635947528
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -157,7 +160,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: 0.7
   m_Pitch: 1
   Loop: 0
   Mute: 0
