@@ -24,7 +24,7 @@ public class EnemyPatrol : MonoBehaviour
     private float lastAttackTime = 0f;
     private Vector3 startPosition; // Starting position of the enemy
 
-    public AudioSource duckSounds;
+    
     public float audioRange = 10f;
     public float maxVolume = 0.5f;
 

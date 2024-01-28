@@ -130,7 +130,6 @@ MonoBehaviour:
   detectionRange: 5
   attackDistance: 1
   attackCooldown: 1
-  duckSounds: {fileID: 0}
   audioRange: 10
   maxVolume: 0.5
 --- !u!58 &7033742688635947528
@@ -163,11 +162,11 @@ AudioSource:
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
-  Loop: 0
+  Loop: 1
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
-  Priority: 128
+  Priority: 145
   DopplerLevel: 1
   MinDistance: 1
   MaxDistance: 500
@@ -263,7 +262,7 @@ MonoBehaviour:
   attackCooldown: 1
   crowSounds: {fileID: -8911014691015934788}
   audioRange: 10
-  maxVolume: 0.5
+  maxVolume: 1
 --- !u!1 &5826146711147791708
 GameObject:
   m_ObjectHideFlags: 0
