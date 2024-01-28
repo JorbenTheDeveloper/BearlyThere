@@ -28,6 +28,14 @@ public class PlayerMovement : MonoBehaviour
 
     public Animator playerAc;
 
+    public AudioSource fartSkill;
+    public AudioSource footSteps;
+    public AudioSource runningSteps;
+    public AudioSource finalFart;
+
+    public bool isRunning;
+    public bool runSoundStart;
+
     //[SerializeField] private GameObject _crow;
 
     private void Start()
@@ -40,6 +48,13 @@ public class PlayerMovement : MonoBehaviour
         staminaBar.value = stamina;
 
         abilityTimer = abilityCooldown;
+
+        //footSteps.Play();
+        isRunning = false;
+        footSteps.Play();
+        runningSteps.Stop();
+
+
     }
 
     void Update()
@@ -48,7 +63,32 @@ public class PlayerMovement : MonoBehaviour
         HandleAbilityUse();
         UpdateUI();
         DrainStamina(1 * Time.deltaTime);  // Stamina drain of 1 per second
+
+        bool newRunningState = Input.GetMouseButton(0) && stamina > 0;
+
+        if (newRunningState != isRunning)
+        {
+            isRunning = newRunningState;
+
+            if (isRunning)
+            {
+                RunSoundNow();
+            }
+            else
+            {
+                RunSoundStop();
+            }
+        }
+
+        Rigidbody2D rb = GetComponent<Rigidbody2D>();
+        if (rb != null)
+        {
+            rb.velocity = Vector2.zero;
+        }
     }
+
+
+    
 
     private void HandleMovement()
     {
@@ -57,18 +97,22 @@ public class PlayerMovement : MonoBehaviour
             speed = boostedSpeed;
             DrainStamina(3 * Time.deltaTime);
             playerAc.SetBool("Run", true);
+            //footSteps.pitch *= 1.2f;
+            runSoundStart = true;
+
         }
         else
         {
             speed = originalSpeed;
             playerAc.SetBool("Run", false);
+           
         }
 
         Vector3 pos = transform.position;
-        if (Input.GetKey("w")) { pos.y += speed * Time.deltaTime; }
-        if (Input.GetKey("s")) { pos.y -= speed * Time.deltaTime; }
-        if (Input.GetKey("d")) { pos.x += speed * Time.deltaTime; }
-        if (Input.GetKey("a")) { pos.x -= speed * Time.deltaTime; }
+        if (Input.GetKey("w")) { pos.y += speed * Time.deltaTime;  }
+        if (Input.GetKey("s")) { pos.y -= speed * Time.deltaTime;  }
+        if (Input.GetKey("d")) { pos.x += speed * Time.deltaTime;  }
+        if (Input.GetKey("a")) { pos.x -= speed * Time.deltaTime;  }
 
         transform.position = pos;
     }
@@ -106,12 +150,16 @@ public class PlayerMovement : MonoBehaviour
 
         if (stamina <= 0)
         {
-            SceneManager.LoadScene("Lose"); 
+
+            playerAc.SetBool("Poop", true);
+
+           // SceneManager.LoadScene("Lose"); 
         }
     }
 
     void TriggerAbility()
     {
+        fartSkill.Play();
         GameObject effect = Instantiate(effectPrefab, effectSpawnPoint.transform.position, Quaternion.identity);
         Destroy(effect, effectDuration);
     }
@@ -152,5 +200,29 @@ public class PlayerMovement : MonoBehaviour
         UpdateUI();
         playerAc.SetBool("Damaged", false);
     }
+
+    public void TimeToPoop() 
+    {
+        SceneManager.LoadScene("Lose");
+    }
+
+    public void FartPoopNow ()
+    {
+
+        finalFart.Play();
+    }
+
+    public void RunSoundNow()
+    {
+        footSteps.Stop();
+        runningSteps.Play();
+    }
+
+    public void RunSoundStop()
+    {
+        runningSteps.Stop();
+        footSteps.Play();
+    }
+
 }
 

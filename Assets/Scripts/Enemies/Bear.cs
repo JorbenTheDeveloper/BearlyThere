@@ -14,9 +14,15 @@ public class Bear : MonoBehaviour
     public float detectionRadius = 5f; // Radius within which the bear detects the player
     private bool playerInRange = false;
 
+    public AudioSource bearFartAudio;
+    public float audioRange = 10f;
+    private Transform playerTransform;
+
     private void Start()
     {
         originalScale = transform.localScale; // Store the original scale
+        playerTransform = GameObject.FindGameObjectWithTag("PlayerCharacter").transform;
+        bearFartAudio = GetComponent<AudioSource>();
         StartCoroutine(BearRoutine()); // Start the bear behavior routine
     }
 
@@ -49,6 +55,7 @@ public class Bear : MonoBehaviour
 
                 // Fart
                 GameObject fart = Instantiate(fartEffectPrefab, transform.position, Quaternion.identity);
+                bearFartAudio.Play();
                 Destroy(fart, 2f); // Destroy the fart effect after a short duration
 
                 // Scale down

@@ -1,0 +1,563 @@
+fileFormatVersion: 2
+guid: 4e597d847fe80a549998df77fe4805e9
+TextureImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 12
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMasterTextureLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 200
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Server
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: BearPoopingAnim copy-Sheet_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 554.5
+        height: 606
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e50acb6224f06ce4885b35cfa931c362
+      internalID: -807212138
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BearPoopingAnim copy-Sheet_1
+      rect:
+        serializedVersion: 2
+        x: 554
+        y: 0
+        width: 554.5
+        height: 606
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f1814aff74ccff94cabfe796990081cb
+      internalID: -582406063
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BearPoopingAnim copy-Sheet_2
+      rect:
+        serializedVersion: 2
+        x: 1108
+        y: 0
+        width: 554.5
+        height: 606
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 241b01a4698211d4e800481d3931a304
+      internalID: -553171143
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BearPoopingAnim copy-Sheet_3
+      rect:
+        serializedVersion: 2
+        x: 1662
+        y: 0
+        width: 554.5
+        height: 606
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b6e1be09b6b26994d990ad1e1e83c2cb
+      internalID: 1024981108
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BearPoopingAnim copy-Sheet_4
+      rect:
+        serializedVersion: 2
+        x: 2216
+        y: 0
+        width: 554.5
+        height: 606
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 528b1e28b9544974281ea2beb89a25b9
+      internalID: 56693243
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BearPoopingAnim copy-Sheet_5
+      rect:
+        serializedVersion: 2
+        x: 2770
+        y: 0
+        width: 554.5
+        height: 606
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cde97f9ae5d62f84fa1abdfbb5087e26
+      internalID: 2090213370
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BearPoopingAnim copy-Sheet_6
+      rect:
+        serializedVersion: 2
+        x: 3324
+        y: 0
+        width: 554.5
+        height: 606
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ab77bde2b53b86d49aa8758a4ff94feb
+      internalID: 1234577912
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BearPoopingAnim copy-Sheet_7
+      rect:
+        serializedVersion: 2
+        x: 3878
+        y: 0
+        width: 554.5
+        height: 606
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 24cc8046d6c40554b812330ebc464c5b
+      internalID: 1671147275
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BearPoopingAnim copy-Sheet_8
+      rect:
+        serializedVersion: 2
+        x: 4432
+        y: 0
+        width: 554.5
+        height: 606
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8e5aa880e9130d448bc486974702f59b
+      internalID: 1520546522
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BearPoopingAnim copy-Sheet_9
+      rect:
+        serializedVersion: 2
+        x: 4986
+        y: 0
+        width: 554.5
+        height: 606
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5f3520b42a040654393e984d92818d6c
+      internalID: -273525507
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BearPoopingAnim copy-Sheet_10
+      rect:
+        serializedVersion: 2
+        x: 5540
+        y: 0
+        width: 554.5
+        height: 606
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 696ca7b62d030f3478b4b1c0fa56e8bb
+      internalID: 1695010992
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BearPoopingAnim copy-Sheet_11
+      rect:
+        serializedVersion: 2
+        x: 6094
+        y: 0
+        width: 554.5
+        height: 606
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f06ca2d0e8728c1488e8477971bba166
+      internalID: -816013190
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BearPoopingAnim copy-Sheet_12
+      rect:
+        serializedVersion: 2
+        x: 6648
+        y: 0
+        width: 554.5
+        height: 606
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fd70ad34066eb614aa4f1217f95cfc2e
+      internalID: -19044346
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BearPoopingAnim copy-Sheet_13
+      rect:
+        serializedVersion: 2
+        x: 7202
+        y: 0
+        width: 554.5
+        height: 606
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b2f6f7bee69f6464881b0af4bb1b31f3
+      internalID: -1394004422
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BearPoopingAnim copy-Sheet_14
+      rect:
+        serializedVersion: 2
+        x: 7756
+        y: 0
+        width: 554.5
+        height: 606
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d105e9c3e8e84df4ea10d7aa01aa375a
+      internalID: 1392642673
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BearPoopingAnim copy-Sheet_15
+      rect:
+        serializedVersion: 2
+        x: 8310
+        y: 0
+        width: 554.5
+        height: 606
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5afeca944aa40014bbc9faafc65e5a2a
+      internalID: -268343778
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BearPoopingAnim copy-Sheet_16
+      rect:
+        serializedVersion: 2
+        x: 8864
+        y: 0
+        width: 554.5
+        height: 606
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3b4c2302ec357f04188594946b693e9e
+      internalID: 494196226
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BearPoopingAnim copy-Sheet_17
+      rect:
+        serializedVersion: 2
+        x: 9418
+        y: 0
+        width: 554.5
+        height: 606
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 521e47cc4d887ec49995ca639a6e260d
+      internalID: -1127288927
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BearPoopingAnim copy-Sheet_18
+      rect:
+        serializedVersion: 2
+        x: 9972
+        y: 0
+        width: 554.5
+        height: 606
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 73acd8db954519c4d97476b09530e73a
+      internalID: -53331246
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BearPoopingAnim copy-Sheet_19
+      rect:
+        serializedVersion: 2
+        x: 10526
+        y: 0
+        width: 554.5
+        height: 606
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 062f76629147cba48acfa822c86d6f09
+      internalID: -151649243
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      BearPoopingAnim copy-Sheet_6: 1234577912
+      BearPoopingAnim copy-Sheet_10: 1695010992
+      BearPoopingAnim copy-Sheet_14: 1392642673
+      BearPoopingAnim copy-Sheet_3: 1024981108
+      BearPoopingAnim copy-Sheet_18: -53331246
+      BearPoopingAnim copy-Sheet_16: 494196226
+      BearPoopingAnim copy-Sheet_5: 2090213370
+      BearPoopingAnim copy-Sheet_4: 56693243
+      BearPoopingAnim copy-Sheet_17: -1127288927
+      BearPoopingAnim copy-Sheet_2: -553171143
+      BearPoopingAnim copy-Sheet_13: -1394004422
+      BearPoopingAnim copy-Sheet_19: -151649243
+      BearPoopingAnim copy-Sheet_8: 1520546522
+      BearPoopingAnim copy-Sheet_7: 1671147275
+      BearPoopingAnim copy-Sheet_11: -816013190
+      BearPoopingAnim copy-Sheet_1: -582406063
+      BearPoopingAnim copy-Sheet_0: -807212138
+      BearPoopingAnim copy-Sheet_12: -19044346
+      BearPoopingAnim copy-Sheet_15: -268343778
+      BearPoopingAnim copy-Sheet_9: -273525507
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
