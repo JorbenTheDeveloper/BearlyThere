@@ -22,30 +22,21 @@ public class EnemyPatrol : MonoBehaviour
 
     private bool isAttacking = false;
     private float lastAttackTime = 0f;
+    private Vector3 startPosition; // Starting position of the enemy
 
     public AudioSource duckSounds;
     public float audioRange = 10f;
     public float maxVolume = 0.5f;
 
-    
-
     private void Start()
     {
+        startPosition = transform.position; // Save the starting position
         SetNextPatrolPoint();
-       // duckSounds.Play();
     }
 
     private void Update()
     {
-
-
-
         float distanceToPlayer = Vector2.Distance(transform.position, player.position);
-
-
-        
-
-
 
         if (currentState == EnemyState.Fleeing)
         {
@@ -64,8 +55,16 @@ public class EnemyPatrol : MonoBehaviour
         }
         else
         {
-            currentState = EnemyState.Patrolling;
-            Patrol();
+            if (movementPoints == null || movementPoints.Length == 0)
+            {
+                // Return to starting position if no movement points are set
+                MoveTowards(startPosition, patrolSpeed);
+            }
+            else
+            {
+                currentState = EnemyState.Patrolling;
+                Patrol();
+            }
         }
 
         if (currentState == EnemyState.Chasing || currentState == EnemyState.Attacking)
@@ -89,20 +88,20 @@ public class EnemyPatrol : MonoBehaviour
         if (player != null)
         {
             MoveTowards(player.position, chaseSpeed);
-
-           
         }
     }
 
     void MoveTowards(Vector2 target, float speed)
     {
         transform.position = Vector2.MoveTowards(transform.position, target, Time.deltaTime * speed);
-       
     }
 
     void SetNextPatrolPoint()
     {
-        currentPointIndex = (currentPointIndex + 1) % movementPoints.Length;
+        if (movementPoints.Length > 0)
+        {
+            currentPointIndex = (currentPointIndex + 1) % movementPoints.Length;
+        }
     }
 
     IEnumerator AttackPlayer()
