@@ -192,8 +192,8 @@ MonoBehaviour:
   player: {fileID: 0}
   spawnRange: 5
   beeSound: {fileID: 1278053019675554677}
-  audioRange: 10
-  maxVolume: 1
+  audioRange: 9
+  maxVolume: 0.5
 --- !u!95 &8618246373796167287
 Animator:
   serializedVersion: 4
@@ -242,13 +242,13 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 73c1e555795a61b40b079ece2a1ccecf, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 0.499
+  m_Volume: 0.137
   m_Pitch: 1
   Loop: 1
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
-  Priority: 128
+  Priority: 107
   DopplerLevel: 1
   MinDistance: 1
   MaxDistance: 2

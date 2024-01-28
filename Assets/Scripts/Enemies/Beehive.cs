@@ -13,7 +13,7 @@ public class Beehive : MonoBehaviour
 
     public AudioSource beeSound;
     public float audioRange = 20f;
-    public float maxVolume = 1.0f;
+    public float maxVolume = 0.5f;
 
     private void Update()
     {

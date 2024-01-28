@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 427415087544166936}
   - component: {fileID: 7033742688635947528}
   - component: {fileID: -8911014691015934788}
+  - component: {fileID: 1136197288357936849}
   m_Layer: 0
   m_Name: Crow
   m_TagString: Enemy
@@ -129,6 +130,9 @@ MonoBehaviour:
   detectionRange: 5
   attackDistance: 1
   attackCooldown: 1
+  duckSounds: {fileID: 0}
+  audioRange: 10
+  maxVolume: 0.5
 --- !u!58 &7033742688635947528
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -155,8 +159,8 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 0}
-  m_PlayOnAwake: 1
+  m_audioClip: {fileID: 8300000, guid: cbc8899655eae0640bf1cf7eba3fa46f, type: 3}
+  m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
   Loop: 0
@@ -241,6 +245,25 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &1136197288357936849
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3796119186260601114}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5370db659b5f0df438c263d3409ed8b2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 0}
+  detectionRange: 5
+  attackDistance: 1
+  attackCooldown: 1
+  crowSounds: {fileID: -8911014691015934788}
+  audioRange: 10
+  maxVolume: 0.5
 --- !u!1 &5826146711147791708
 GameObject:
   m_ObjectHideFlags: 0

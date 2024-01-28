@@ -25,12 +25,14 @@ public class EnemyPatrol : MonoBehaviour
 
     public AudioSource duckSounds;
     public float audioRange = 10f;
-    public float maxVolume = 1.0f;
+    public float maxVolume = 0.5f;
+
+    
 
     private void Start()
     {
         SetNextPatrolPoint();
-        duckSounds.Play();
+       // duckSounds.Play();
     }
 
     private void Update()
@@ -41,15 +43,7 @@ public class EnemyPatrol : MonoBehaviour
         float distanceToPlayer = Vector2.Distance(transform.position, player.position);
 
 
-        if (distanceToPlayer <= audioRange)
-        {
-            float volume = 1.0f - (distanceToPlayer / audioRange); // Calculate volume based on distance
-            duckSounds.volume = maxVolume * volume; // Set the volume of the bee sound
-        }
-        else
-        {
-            duckSounds.volume = 0f; // Player is outside the audio range, set volume to 0
-        }
+        
 
 
 
