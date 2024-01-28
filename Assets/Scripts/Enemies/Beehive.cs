@@ -11,14 +11,33 @@ public class Beehive : MonoBehaviour
 
     private bool beesSpawned = false; // To check if bees have already been spawned
 
+    public AudioSource beeSound;
+    public float audioRange = 20f;
+    public float maxVolume = 1.0f;
+
     private void Update()
     {
         // Check the distance between the player and the beehive
         if (!beesSpawned && player != null && Vector3.Distance(transform.position, player.position) <= spawnRange)
         {
             SpawnBees();
+            beeSound.Play();
             beesSpawned = true; // Prevents bees from spawning repeatedly
         }
+
+        float distanceToPlayer = Vector3.Distance(transform.position, player.position);
+
+        // Adjust the volume based on distance within the audio range
+        if (distanceToPlayer <= audioRange)
+        {
+            float volume = 1.0f - (distanceToPlayer / audioRange); // Calculate volume based on distance
+            beeSound.volume = maxVolume * volume; // Set the volume of the bee sound
+        }
+        else
+        {
+            beeSound.volume = 0f; // Player is outside the audio range, set volume to 0
+        }
+
     }
 
     void SpawnBees()

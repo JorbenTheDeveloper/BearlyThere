@@ -23,14 +23,35 @@ public class EnemyPatrol : MonoBehaviour
     private bool isAttacking = false;
     private float lastAttackTime = 0f;
 
+    public AudioSource duckSounds;
+    public float audioRange = 10f;
+    public float maxVolume = 1.0f;
+
     private void Start()
     {
         SetNextPatrolPoint();
+        duckSounds.Play();
     }
 
     private void Update()
     {
+
+
+
         float distanceToPlayer = Vector2.Distance(transform.position, player.position);
+
+
+        if (distanceToPlayer <= audioRange)
+        {
+            float volume = 1.0f - (distanceToPlayer / audioRange); // Calculate volume based on distance
+            duckSounds.volume = maxVolume * volume; // Set the volume of the bee sound
+        }
+        else
+        {
+            duckSounds.volume = 0f; // Player is outside the audio range, set volume to 0
+        }
+
+
 
         if (currentState == EnemyState.Fleeing)
         {
@@ -74,12 +95,15 @@ public class EnemyPatrol : MonoBehaviour
         if (player != null)
         {
             MoveTowards(player.position, chaseSpeed);
+
+           
         }
     }
 
     void MoveTowards(Vector2 target, float speed)
     {
         transform.position = Vector2.MoveTowards(transform.position, target, Time.deltaTime * speed);
+       
     }
 
     void SetNextPatrolPoint()
